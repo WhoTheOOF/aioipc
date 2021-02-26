@@ -28,7 +28,7 @@ class Client:
             await writer.drain()
 
             first_data = await reader.readuntil(b"uRkP")
-            bytes_to_read = int(first_data.decode("utf-8").replace("uRkP", "")) + len(first_data)
+            bytes_to_read = int(first_data.decode("utf-8").replace("uRkP", ""))
 
             data = await reader.readexactly(bytes_to_read)
             to_return = json.loads(data)

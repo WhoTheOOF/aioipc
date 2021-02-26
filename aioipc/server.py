@@ -49,7 +49,7 @@ class Server:
     async def handle_client_requests(self, reader, writer):
         """Processes the client request"""
         first_data = await reader.readuntil(b"xYbO")
-        bytes_to_read = int(first_data.decode("utf-8").replace("xYbO", "")) + len(first_data)
+        bytes_to_read = int(first_data.decode("utf-8").replace("xYbO", ""))
 
         data = await reader.readexactly(bytes_to_read)
         parsed_json = json.loads(data)
