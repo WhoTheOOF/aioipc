@@ -6,10 +6,11 @@ with open("aioipc/__init__.py") as stream:
 
 setuptools.setup(
     author="Riksou",
-    url='https://github.com/Riksou/aioipc',
+    url="https://github.com/Riksou/aioipc",
     version=version,
-    packages=['aioipc'],
-    description='An asynchronous python library for inter-process communication.',
-    install_requires=['discord.py>=1.4.1'],
-    python_requires='>=3.7'
+    name="aioipc",
+    packages=["aioipc"],
+    description="An asynchronous python library for inter-process communication.",
+    install_requires=["discord.py>=1.4.1"],
+    python_requires=">=3.7"
 )
