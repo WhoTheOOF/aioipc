@@ -51,7 +51,7 @@ class Server:
         first_data = await reader.readuntil(b"xYbO")
         bytes_to_read = int(first_data.decode("utf-8").replace("xYbO", "")) + len(first_data)
 
-        data = await reader.read(bytes_to_read)
+        data = await reader.readexactly(bytes_to_read)
         parsed_json = json.loads(data)
 
         headers = parsed_json.get("headers")
