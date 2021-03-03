@@ -54,7 +54,7 @@ class Server:
 
             data = await reader.readexactly(bytes_to_read)
             parsed_json = json.loads(data)
-        except ConnectionResetError:
+        except (ConnectionResetError, asyncio.IncompleteReadError):
             return
 
         headers = parsed_json.get("headers")
