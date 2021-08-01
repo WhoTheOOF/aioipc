@@ -95,9 +95,7 @@ class Server:
         writer.close()
         await writer.wait_closed()
 
-    def start(self):
+    async def start(self):
         """Start the IPC server"""
-        server_coro = asyncio.start_server(self.handle_client_requests, self.host, self.port, loop=self.loop)
-
         self.bot.dispatch("ipc_ready")
-        self.loop.run_until_complete(server_coro)
+        await asyncio.start_server(self.handle_client_requests, self.host, self.port, loop=self.loop)
