@@ -1,4 +1,4 @@
-## aiopc
+## aioipc
 
 This was originally forked from an old version of [discord-ext-ipc](https://github.com/Ext-Creators/discord-ext-ipc),
 thanks [Logan](https://github.com/lgaan) for writing most of it.
